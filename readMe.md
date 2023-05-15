@@ -25,3 +25,6 @@ this. = context
 //Set e Get 
 get – una funzione che non accetta argomenti, che specifica come accedere in lettura ad una proprietà,
 set – una funzione con un solo argomento, che specifica come impostare il valore della proprietà,
+
+
+get time : getTime() returns the number of milliseconds since January 1, 1970 
