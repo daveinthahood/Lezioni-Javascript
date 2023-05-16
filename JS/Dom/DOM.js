@@ -6,3 +6,4 @@
 
 
 //STATE parte serve sempre per centralizzare i dati, un solo slot di memoria che opera tramite manipolazione e non reiniziallizzazione di variabili
+//usiamo le promise per aspettare la risposta del codice
