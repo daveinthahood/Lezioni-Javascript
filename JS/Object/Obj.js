@@ -1,62 +1,62 @@
-//------------------------[ Cos'è un oggetto ]----------------------------
-
-/*
-	-Tipo non primitivo
-	-Rappresentazione dati più complessa
-	-Raggruppare più dati
-	-Forma più utilizzata nel trasferimento di dati (form)
-*/
-
-//-------------------[ Come si prensenta un oggetto ]---------------------
-
-/* -Proprietà = Chiave : Valore */
-
-// const oggetoVuoto = {};
+//!!------------------------[ Cos'è un oggetto ]----------------------------
 
 
+//* 	-Tipo non primitivo
+//* 	-Rappresentazione dati più complessa
+//* 	-Raggruppare più dati
+//* 	-Forma più utilizzata nel trasferimento di dati (form)
 
-// const pizza = {
-// 	name: 'Margherita',
-// 	born: 1889,
-// 	isGood: true,
-// 	ingredients: {
-// 		tomato: true,
-// 		mozzarella: true,
-// 		basil: false
-// 	},
-// 	cook: () => console.log('This Margherita is cooking.'),
-// 	cookFunc: function () {
-// 		console.log('Cooking function');
-// 	}
-// };
 
-// console.log(pizza);
+//!-------------------[ Come si prensenta un oggetto ]---------------------
 
-//-----------------[ Ottenere i valori di un oggetto ]--------------------
+//* -Proprietà = Chiave : Valore 
 
-/* Dot notation */
+//* const oggetoVuoto = {};
 
-// const pizzaName = pizza.name;
 
-// console.log(pizzaName);
 
-/* Bracket notation */
+const pizza = {
+	name: 'Margherita',
+	born: 1889,
+	isGood: true,
+	ingredients: {
+		tomato: true,
+		mozzarella: true,
+		basil: false
+	},
+	cook: () => console.log('This Margherita is cooking.'),
+	cookFunc: function () {
+		console.log('Cooking function');
+	}
+};
 
-// const pizzaName = pizza['name']; 
+console.log(pizza);
 
-// console.log(pizzaName);
+//!-----------------[ Ottenere i valori di un oggetto ]--------------------
 
-/* Quando utilizzare la bracket notation */
+//+ Dot notation 
 
-// const key = 'name';
+const pizzaName = pizza.name;
 
-// const value = pizza[key];
+console.log(pizzaName);
 
-// console.log(value);
+//+ Bracket notation 
 
-//----------------------[ Modificare un oggetto ]-------------------------
+ const pizzaNamee = pizza['name']; 
 
-/* Aggiungere proprietà */
+console.log(pizzaNamee);
+
+//+ Quando utilizzare la bracket notation 
+
+const key = 'name';
+
+const value = pizza[key];
+
+console.log(value);
+
+//!----------------------[ Modificare un oggetto ]-------------------------
+
+//* Aggiungere proprietà 
 
 // console.log(pizza);
 
@@ -65,7 +65,7 @@
 
 // console.log(pizza);
 
-/* Modificare proprietà */
+//* Modificare proprietà 
 
 // console.log(pizza);
 
@@ -76,7 +76,7 @@
 
 // console.log(pizza);
 
-/* Eliminare proprietà */
+//* Eliminare proprietà */
 
 // console.log(pizza);
 
@@ -85,18 +85,14 @@
 
 // console.log(pizza);
 
-//------------------------------------------------------------------------
-
-// Domande ??
-
-//------------------------[ Optional chaining ]---------------------------
+//!------------------------[ Optional chaining ]---------------------------
 
 
 // const tomato = quattroFormaggi.ingridients?.name;
 
-// console.log(quattroFormaggi.ingridients?.name);
+// console.log(quattroFormaggi.ingridients?.name); //+ se non trova il percorso ci ritorna il valore di undefined invece di bloccare il codice
 
-//-----------------------[ Copiare un oggetto ]---------------------------
+//!-----------------------[ Copiare un oggetto ]---------------------------
 
 /* Value - Reference */
 // let num1 = 34;
@@ -124,7 +120,7 @@
 
 // Domande ??
 
-//-------------------------[ Operatore *in* ]-----------------------------
+//!-------------------------[ Operatore *in* ]-----------------------------
 
 // if ('isGood' in pizza) {
 // 	console.log('isGood è dentro pizza');
@@ -138,7 +134,7 @@
 // 	console.log('isGood non è in pizza');
 // }
 
-//--------------------[ Iterazione di un oggetto ]------------------------
+//!--------------------[ Iterazione di un oggetto ]------------------------
 
 // for (const key in pizza) {
 // 	if (key === 'ingredients') {
@@ -154,25 +150,28 @@
 // 	console.log(value);
 // }
 
-//------------------------------------------------------------------------
+//!-----------------[ Constructor functions (deprecated) ]--------------------------
 
-// Domande ??
+//? la funzione costruttore si scrive con la seguente sintassi:
+//!!Syntax
 
-//-----------------[ Constructor functions (deprecated) ]--------------------------
+//? dichiarazioneFunzione  Nome|con lettera maiusc|(parametri){
+//?	 this.key = param (per convenzione e chiarezza nel codice usiamo la ridondanza key = param )
+//? }
 
-// function Pizza(name, born, isGood, ingredients, ham) {
-// 	this.name = name;
-// 	this.born = born;
-// 	this.isGood = isGood;
-// 	this.ingredients = ingredients;
-// 	this.cook = (degrees) => console.log(this.name + ' is cooking at ' + degrees + ' degrees');
-// 	this.cookFunc = function () {
-// 		console.log(this.name + ' is cooking!');
-// 	};
-// 	this.addIngredient = (name, value) => {
-// 		this.ingredients[name] = value;
-// 	};
-// }
+function Pizza(name, born, isGood, ingredients) {
+	this.name = name;
+	this.born = born;
+	this.isGood = isGood;
+	this.ingredients = ingredients;
+	this.cook = (degrees) => console.log(this.name + ' is cooking at ' + degrees + ' degrees');
+	this.cookFunc = function () {
+		console.log(this.name + ' is cooking!');
+	};
+	this.addIngredient = (name, value) => {
+		this.ingredients[name] = value;
+	};
+}
 
 // const margherita = new Pizza('Margherita', 1889, true, { tomato: true, mozzarella: true });
 
@@ -183,6 +182,3 @@
 // console.log(margherita);
 
 // const gorgonzolaCipolla = new Pizza('Gorgo e cipolla', null, true, { gorgo: true, onion: true });
-
-// // console.log(margherita);
-// // console.log(gorgonzolaCipolla);

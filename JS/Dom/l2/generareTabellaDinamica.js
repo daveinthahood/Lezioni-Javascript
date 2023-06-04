@@ -16,11 +16,12 @@ const generateTableRowHTML = (post) => {
     `
 }
 
+
 const fetchData = async () => { //void func senza return
-    try {
+    try { 
         const response = await fetch("https://jsonplaceholder.typicode.com/posts") //fetch con un solo param fa una chiamata get, secondo param obj
-        const result = await response.json() 
-        state.posts= result; 
+        // const result = 
+        state.posts = await response.json() 
     } catch (error) {
         console.error(error);
         renderError(error.message);
